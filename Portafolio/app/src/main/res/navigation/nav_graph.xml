@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/taskList">
+
+    <fragment
+        android:id="@+id/taskList"
+        android:name="com.example.portafolio.Ui.fragments.TaskList"
+        android:label="fragment_task_list"
+        tools:layout="@layout/fragment_task_list" >
+        <action
+            android:id="@+id/action_taskList_to_createTask"
+            app:destination="@id/createTask" />
+        <action
+            android:id="@+id/action_taskList_to_detailTask"
+            app:destination="@id/detailTask" />
+    </fragment>
+    <fragment
+        android:id="@+id/createTask"
+        android:name="com.example.portafolio.Ui.fragments.CreateTask"
+        android:label="fragment_create_task"
+        tools:layout="@layout/fragment_create_task" >
+        <action
+            android:id="@+id/action_createTask_to_taskList"
+            app:destination="@id/taskList" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailTask"
+        android:name="com.example.portafolio.Ui.fragments.DetailTask"
+        android:label="fragment_detail_task"
+        tools:layout="@layout/fragment_detail_task" >
+        <action
+            android:id="@+id/action_detailTask_to_taskList"
+            app:destination="@id/taskList" />
+        <argument
+            android:name="id_task"
+            app:argType="integer" />
+    </fragment>
+</navigation>
